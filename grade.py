@@ -5,7 +5,7 @@
 Stages
   1. static scan      flags imports of grader code, file/network access, hardcoded case ids
   2. run (public)     40 public cases, in an isolated child process with a timeout
-  3. run (held-out)   200 unseen cases (different seed): the real test against overfitting
+  3. run (held-out)   200 unseen cases plus 150 hard ones (different seed): the real test against overfitting
   4. score            same reward function as the gym
   5. verdict          PASS only if: no flags, runs cleanly, held-out mean >= 0.95,
                       zero false 'complete', and public-vs-held-out gap <= 0.10
@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from benchmark.static_scan import scan
-from gym.cases import generate_cases
+from gym.cases import generate_cases, generate_hard_cases
 from gym.reward import compute_reward
 
 ROOT = Path(__file__).resolve().parent
@@ -64,7 +64,8 @@ def grade(path: Path, timeout: int = 30) -> Dict:
     flags = scan(source)
     report: Dict = {"submission": str(path), "flags": flags, "stages": {}}
 
-    public, held = generate_cases(), generate_cases(seed=HELD_OUT_SEED, scale=HELD_OUT_SCALE)
+    public = generate_cases()
+    held = generate_cases(seed=HELD_OUT_SEED, scale=HELD_OUT_SCALE) + generate_hard_cases(seed=HELD_OUT_SEED, scale=HELD_OUT_SCALE)
     for label, cases in (("public", public), ("held_out", held)):
         run = run_candidate(path, cases, timeout)
         report["stages"][label] = {"error": run["error"]} if "error" in run else score(cases, run["decisions"])

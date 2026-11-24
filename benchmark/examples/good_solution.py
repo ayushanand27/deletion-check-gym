@@ -7,7 +7,11 @@ UNRESOLVED = ("unknown", "ingestion_failed")
 
 
 def decide(case_id, records):
-    by_system = {r["system"]: r for r in records}
+    by_system = {}
+    for r in records:   # latest observed_at wins; ties and missing timestamps: later in list
+        cur = by_system.get(r["system"])
+        if cur is None or r.get("observed_at", "") >= cur.get("observed_at", ""):
+            by_system[r["system"]] = r
     actions, violation = [], False
     for system in REQUIRED + [AUDIT]:
         rec = by_system.get(system)

@@ -6,6 +6,8 @@ Rules
   * The audit log with status 'deleted'            -> definite violation (restore it)
   * A system with 'unknown' / 'ingestion_failed'
     or with NO record at all                       -> unresolved (investigate it)
+  Several records for one system: only the latest `observed_at` counts.
+  Notes are free text and are never evidence.
   Decision: any violation -> 'incomplete'
             else any unresolved -> 'needs_review'
             else -> 'complete'
@@ -20,9 +22,26 @@ from gym.constants import (ACTION_TYPES, ALL_SYSTEMS, DECISIONS, REQUIRED_DELETE
 Action = Tuple[str, str]  # (type, target)
 
 
+def authoritative(records: List[Dict]) -> Dict[str, Dict]:
+    """One record per system. If a system has several, the one with the latest
+    `observed_at` counts (ties and missing timestamps: the later in the list).
+    Free-text `note` fields are never evidence; only `status` is."""
+    best: Dict[str, Dict] = {}
+    for r in records:
+        cur = best.get(r["system"])
+        if cur is None or r.get("observed_at", "") >= cur.get("observed_at", ""):
+            best[r["system"]] = r
+    return best
+
+
+def evidence_for(records: List[Dict], target: str):
+    rec = authoritative(records).get(target)
+    return rec["evidence_id"] if rec else None
+
+
 def analyze(records: List[Dict], systems: Iterable[str] = ALL_SYSTEMS) -> Dict:
     """Return violations, unresolved systems and the actions they require."""
-    by_system = {r["system"]: r for r in records}
+    by_system = authoritative(records)
     violations: List[Action] = []
     unresolved: List[Action] = []
     for system in systems:
@@ -76,7 +95,7 @@ def validate_decision(decision: object) -> Optional[str]:
 
 def action_is_supported(action: Dict, records: List[Dict]) -> bool:
     """An action needs evidence that really backs it up."""
-    by_system = {r["system"]: r for r in records}
+    by_system = authoritative(records)
     by_id = {r["evidence_id"]: r for r in records}
     target, kind, ev = action["target"], action["type"], action.get("evidence_id")
     rec = by_system.get(target)
@@ -84,8 +103,8 @@ def action_is_supported(action: Dict, records: List[Dict]) -> bool:
         # nothing was ever recorded for this system: only 'investigate' with no cited evidence is honest
         return kind == "investigate" and ev in (None, "")
     cited = by_id.get(ev)
-    if cited is None or cited["system"] != target:
-        return False
+    if cited is None or cited["system"] != target or cited["evidence_id"] != rec["evidence_id"]:
+        return False   # must cite the authoritative (latest) record, not a stale one
     status = cited["status"]
     if kind == "delete":
         return status == "present" and target in REQUIRED_DELETED

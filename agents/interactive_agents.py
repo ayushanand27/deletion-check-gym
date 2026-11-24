@@ -3,14 +3,14 @@ from __future__ import annotations
 
 from typing import Dict
 
-from gym.verifier import analyze
+from gym.verifier import analyze, evidence_for
 
 
 def _decide_from(records, systems):
     result = analyze(records, systems)
     actions = []
     for kind, target in sorted(result["required_actions"]):
-        ev = next((r["evidence_id"] for r in records if r["system"] == target), None)
+        ev = evidence_for(records, target)
         actions.append({"type": kind, "target": target, "evidence_id": ev})
     return {"op": "decide", "decision": result["decision"], "actions": actions}
 

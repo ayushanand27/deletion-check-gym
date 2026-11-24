@@ -14,6 +14,7 @@ import urllib.request
 
 from agents.llm_agent import LLMAgent
 from gym import generate_cases
+from gym.cases import generate_hard_cases
 from harness.evaluate import category_table, evaluate_single, markdown_table
 
 BASE = os.environ.get("LLM_BASE_URL", "https://api.groq.com/openai/v1")
@@ -45,15 +46,18 @@ def make_complete(model: str, retries: int = 5):
 def main() -> None:
     if not KEY:
         sys.exit("set GROQ_API_KEY (or LLM_API_KEY_ENV) first")
-    models = sys.argv[1:] or ["openai/gpt-oss-120b"]
-    cases = generate_cases()
+    args = sys.argv[1:]
+    hard = "--hard" in args
+    models = [a for a in args if a != "--hard"] or ["openai/gpt-oss-120b"]
+    cases = generate_hard_cases() if hard else generate_cases()
     summaries = []
     for m in models:
         print("running", m, flush=True)
         summaries.append(evaluate_single(LLMAgent(make_complete(m), name=m), cases))
-    out = "## Real LLMs (single-step, 40 public cases, temperature 0)\n" + markdown_table(summaries) \
+    label = "30 hard cases" if hard else "40 public cases"
+    out = f"### Real LLMs (single-step, {label}, temperature 0)\n" + markdown_table(summaries) \
           + "\n\n### By category\n" + category_table(summaries) + "\n"
-    open("results_llm.md", "w").write(out)
+    open("results_llm_hard.md" if hard else "results_llm.md", "w").write(out)
     print(out)
 
 

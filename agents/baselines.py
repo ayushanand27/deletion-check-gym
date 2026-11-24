@@ -14,11 +14,11 @@ import random
 from typing import Dict
 
 from gym.constants import UNRESOLVED
-from gym.verifier import analyze
+from gym.verifier import analyze, evidence_for
 
 
 def _action(kind: str, target: str, records) -> Dict:
-    ev = next((r["evidence_id"] for r in records if r["system"] == target), None)
+    ev = evidence_for(records, target)
     return {"type": kind, "target": target, "evidence_id": ev}
 
 

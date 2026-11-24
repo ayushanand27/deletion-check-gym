@@ -22,6 +22,7 @@ from typing import Dict, List, Optional, Tuple
 
 from gym.constants import ACTION_TYPES, ALL_SYSTEMS, DECISIONS
 from gym.reward import compute_reward
+from gym.verifier import authoritative
 
 MAX_STEPS = 12
 INSPECT_COST = 0.02
@@ -67,7 +68,7 @@ class InvestigationEnv:
             if system not in ALL_SYSTEMS:
                 return self._log(action, {"steps_left": MAX_STEPS - self._steps}, -0.1,
                                  {"error": "unknown system"})
-            rec = next((r for r in self._case["records"] if r["system"] == system), None)
+            rec = authoritative(self._case["records"]).get(system)
             if rec is not None:
                 self._seen[rec["evidence_id"]] = rec
             obs = {"system": system, "record": copy.deepcopy(rec),
