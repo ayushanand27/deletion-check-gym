@@ -79,12 +79,13 @@ def _statuses(category: str, rng: random.Random) -> Dict[str, str]:
     return st
 
 
-def generate_cases(seed: int = 7) -> List[Dict]:
+def generate_cases(seed: int = 7, scale: int = 1) -> List[Dict]:
+    """scale multiplies how many cases each category gets (used for held-out sets)."""
     rng = random.Random(seed)
     cases: List[Dict] = []
     idx = 0
     for category, count in PLAN:
-        for _ in range(count):
+        for _ in range(count * scale):
             idx += 1
             case_id = f"case-{idx:03d}"
             statuses = _statuses(category, rng)
