@@ -127,6 +127,30 @@ drops-unresolved hack   said: complete       reward: -3.0
 | unknown_evidence | 0.88 | -3.00 | -0.45 | -1.00 |
 
 
+## Real model results
+
+### Real LLMs (single-step, 40 public cases, temperature 0)
+| Agent | Mean reward (95% CI) | Accuracy | False 'complete' | Perfect |
+| --- | --- | --- | --- | --- |
+| openai/gpt-oss-120b | 1.00 (1.00 to 1.00) | 100% | 0/40 | 40/40 |
+| openai/gpt-oss-20b | 1.00 (1.00 to 1.00) | 100% | 0/40 | 40/40 |
+| qwen/qwen3.8-27b | 0.60 (0.30 to 0.90) | 85% | 2/40 | 34/40 |
+
+### By category
+| Category | openai/gpt-oss-120b | openai/gpt-oss-20b | qwen/qwen3.8-27b |
+| --- | --- | --- | --- |
+| all_clear | 1.00 | 1.00 | 1.00 |
+| audit_deleted | 1.00 | 1.00 | 1.00 |
+| ingestion_failed | 1.00 | 1.00 | 1.00 |
+| missing_record | 1.00 | 1.00 | -1.00 |
+| mixed_violation_and_unknown | 1.00 | 1.00 | -0.33 |
+| still_present | 1.00 | 1.00 | 1.00 |
+| unknown_evidence | 1.00 | 1.00 | 1.00 |
+
+Read this honestly: the two gpt-oss models get a perfect score, so the 40 public cases are **too easy for strong models** because the prompt states the rules. The useful signal is qwen: on `missing_record` it answered `complete` when a system had no record at all (the exact "silent absence" failure this gym targets), and on a mixed case it chose `needs_review` instead of `incomplete`. Harder cases are the next step.
+
+Reproduce: `GROQ_API_KEY=... python run_llm.py openai/gpt-oss-120b qwen/qwen3.8-27b`
+
 ## Coding-agent benchmark and grading pipeline
 
 `benchmark/TASK.md` asks a coding agent to write `decide(case_id, records)`.
@@ -179,7 +203,7 @@ data/        cases.json (40 cases, 7 categories)
 ## Limitations
 
 - Synthetic, rule-based cases. This tests verifier and reward design, not real-world data.
-- The LLM adapter is tested only with fake model functions. It has not been run against a real model, so no real-model score is reported.
+- Real-model runs cover 3 Groq-hosted models, single-step, one run each at temperature 0. That is a small sample, not a leaderboard.
 - No learning agent is trained here. All agents are hand-written.
 - The static scan is a first filter and can be evaded. The held-out set is the real defence against overfitting, but a submission can still be a bad solution that happens to generalise.
 - `python -I` isolates imports only. It is not a security sandbox; do not grade untrusted code outside a container.
