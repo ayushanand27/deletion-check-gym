@@ -75,13 +75,13 @@ def score(cases: List[Dict], decisions: List[object]) -> Dict:
             "category_means": {k: sum(v) / len(v) for k, v in by_cat.items()}}
 
 
-def grade(path: Path, timeout: int = 30) -> Dict:
+def grade(path: Path, timeout: int = 30, held_out_seed: int = HELD_OUT_SEED) -> Dict:
     source = path.read_text(encoding="utf-8")
     flags = scan(source)
     report: Dict = {"submission": str(path), "flags": flags, "stages": {}}
 
     public = generate_cases()
-    held = generate_cases(seed=HELD_OUT_SEED, scale=HELD_OUT_SCALE) + generate_hard_cases(seed=HELD_OUT_SEED, scale=HELD_OUT_SCALE)
+    held = generate_cases(seed=held_out_seed, scale=HELD_OUT_SCALE) + generate_hard_cases(seed=held_out_seed, scale=HELD_OUT_SCALE)
     for label, cases in (("public", public), ("held_out", held)):
         run = run_candidate(path, cases, timeout)
         report["stages"][label] = {"error": run["error"]} if "error" in run else score(cases, run["decisions"])
@@ -131,8 +131,10 @@ def main() -> None:
     ap.add_argument("solution", type=Path)
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--timeout", type=int, default=30)
+    ap.add_argument("--held-out-seed", type=int, default=HELD_OUT_SEED,
+                    help="seed of the held-out set. The default is public, so use a private one for real grading")
     args = ap.parse_args()
-    report = grade(args.solution, args.timeout)
+    report = grade(args.solution, args.timeout, args.held_out_seed)
     print(to_markdown(report))
     if args.out:
         args.out.write_text(json.dumps(report, indent=2), encoding="utf-8")

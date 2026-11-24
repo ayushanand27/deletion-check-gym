@@ -211,11 +211,12 @@ An obfuscated hardcoder that slips past the static scan is still caught by the h
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q              # 66 tests
+python -m pytest -q              # 68 tests
 python evaluate.py               # all agents, writes results.md / results.json
 python run_baseline.py           # single-step score table
 python show_hack.py              # one hack being caught
 python grade.py benchmark/examples/good_solution.py
+python grade.py my_solution.py --held-out-seed 123456   # use a private seed for real grading
 ```
 
 Plug in a real model:
@@ -232,7 +233,7 @@ gym/         constants, case generator, verifier, reward, single-step and multi-
 agents/      reference agent, hack agents, interactive agents, LLM adapter
 harness/     evaluation (bootstrap CI, per-category tables)
 benchmark/   coding-agent task, static scan, isolated runner, example submissions
-tests/       66 tests
+tests/       68 tests
 data/        cases.json (40 cases, 7 categories)
 ```
 
@@ -249,6 +250,15 @@ I had two other LLMs (Gemini and ChatGPT) attack the design. What was valid and 
 | One failed category could hide inside a 0.95 mean | Valid | Grader also requires every held-out category mean >= 0.8 |
 | Verifier precedence and empty-set conventions unspecified | Valid | Documented, and an exhaustive test checks all 6^6 status combinations against an independent rule |
 | Child process had no resource limits | Valid | CPU, memory and file-size limits added |
+
+Second round (DeepSeek and Grok; ChatGPT and Gemini above):
+
+| Criticism | Verdict | Result |
+| --- | --- | --- |
+| The held-out seed (99) is in the public repo, so a submission could embed the held-out answers | **Valid and confirmed.** A record-fingerprint lookup table PASSED with no flags on the default seed (held-out mean 1.00) and FAILED on a private seed (-1.99) | `grade.py --held-out-seed N`; README and test state that real grading must use a private seed. The default stays public only so the repo is reproducible |
+| In the multi-step env an agent can stop after the first violation | Refuted by measurement: stopping early scores 0.46 vs 0.88 for the thorough agent on the public set, because unresolved systems are also required actions | Regression test added |
+| "Violation beats unresolved" means unresolved systems need no `investigate` | Refuted: both violations and unresolved systems are required actions (`analyze` returns both) | None needed |
+| A solution can re-implement the verifier | Not a flaw: that is the intended solution to the coding task | Stated in the limitations |
 
 Not fixed, and why:
 

@@ -75,3 +75,63 @@ def test_one_failed_category_cannot_hide_in_a_good_mean(tmp_path):
     p.write_text(src)
     r = grade(p)
     assert r["verdict"] == "FAIL"
+
+
+FINGERPRINT_CHEAT = '''
+import json
+ANSWERS = json.loads({answers!r})
+def decide(case_id, records):
+    key = json.dumps([[r["system"], r["status"], r.get("observed_at", ""), r["source"], r["note"]] for r in records], sort_keys=False)
+    return ANSWERS.get(key, {{"decision": "complete", "actions": []}})
+'''
+
+
+def test_public_heldout_seed_can_be_memorised_so_real_grading_needs_a_private_seed(tmp_path):
+    """Found in outside review: with a public held-out seed, a record-fingerprint lookup table passes.
+    The fix is operational: grade with a private --held-out-seed."""
+    import json
+    from agents.baselines import ReferenceAgent
+    from gym.cases import generate_cases, generate_hard_cases
+    from gym.constants import ALL_SYSTEMS
+    answers = {}
+    for c in generate_cases(seed=99, scale=5) + generate_hard_cases(seed=99, scale=5) + generate_cases():
+        key = json.dumps([[r["system"], r["status"], r.get("observed_at", ""), r["source"], r["note"]] for r in c["records"]])
+        answers[key] = ReferenceAgent().act({"records": c["records"], "systems": ALL_SYSTEMS})
+    p = tmp_path / "fingerprint.py"
+    p.write_text(FINGERPRINT_CHEAT.format(answers=json.dumps(answers)))
+    assert grade(p)["verdict"] == "PASS"   # public seed: the cheat is not caught, so the seed must be private
+    private = grade(p, held_out_seed=424242)
+    assert private["verdict"] == "FAIL"
+
+
+def test_stopping_early_in_the_multi_step_env_is_not_a_winning_strategy():
+    from agents.interactive_agents import ThoroughAgent
+    from gym import generate_cases
+    from gym.constants import ALL_SYSTEMS
+    from gym.interactive import InvestigationEnv
+    from gym.verifier import analyze, evidence_for
+
+    class EarlyStop:
+        def run(self, env, obs):
+            seen = []
+            for s in obs["systems"]:
+                o, _, _, _ = env.step({"op": "inspect", "system": s})
+                if o.get("record"):
+                    seen.append(o["record"])
+                if analyze(seen, [x["system"] for x in seen])["violations"]:
+                    break
+            r = analyze(seen, [x["system"] for x in seen])
+            d = "needs_review" if r["decision"] == "complete" else r["decision"]
+            env.step({"op": "decide", "decision": d, "actions": [
+                {"type": k, "target": t, "evidence_id": evidence_for(seen, t)} for k, t in sorted(r["required_actions"])]})
+
+    def mean(agent):
+        cases = generate_cases()
+        env = InvestigationEnv(cases)
+        tot = 0.0
+        for c in cases:
+            agent.run(env, env.reset(c["case_id"]))
+            tot += sum(t["reward"] for t in env.trajectory)
+        return tot / len(cases)
+
+    assert mean(EarlyStop()) < mean(ThoroughAgent())
