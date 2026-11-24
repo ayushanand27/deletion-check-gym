@@ -1,0 +1,1880 @@
+[
+  {
+    "case_id": "case-001",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-001-e1",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-001-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-001-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-001-e4",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-001-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-001-e6",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-002",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-002-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-002-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-002-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-002-e4",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-002-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-002-e6",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-003",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-003-e1",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-003-e2",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-003-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-003-e4",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-003-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-003-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-004",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-004-e1",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-004-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-004-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-004-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-004-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-004-e6",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-005",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-005-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-005-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-005-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-005-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-005-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-005-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-006",
+    "category": "all_clear",
+    "records": [
+      {
+        "evidence_id": "case-006-e1",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-006-e2",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-006-e3",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-006-e4",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-006-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-006-e6",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-007",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-007-e1",
+        "system": "primary_account",
+        "status": "present",
+        "source": "support_api",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-007-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-007-e3",
+        "system": "historical_accounts",
+        "status": "present",
+        "source": "crm_export",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-007-e4",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-007-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-007-e6",
+        "system": "support_tickets",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-008",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-008-e1",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-008-e2",
+        "system": "support_tickets",
+        "status": "present",
+        "source": "audit_service",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-008-e3",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-008-e4",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-008-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-008-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-009",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-009-e1",
+        "system": "marketing_lists",
+        "status": "present",
+        "source": "crm_export",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-009-e2",
+        "system": "analytics_events",
+        "status": "present",
+        "source": "support_api",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-009-e3",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-009-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-009-e5",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-009-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-010",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-010-e1",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-010-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-010-e3",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-010-e4",
+        "system": "primary_account",
+        "status": "present",
+        "source": "warehouse_scan",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-010-e5",
+        "system": "historical_accounts",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-010-e6",
+        "system": "support_tickets",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-011",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-011-e1",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-011-e2",
+        "system": "historical_accounts",
+        "status": "present",
+        "source": "support_api",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-011-e3",
+        "system": "primary_account",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-011-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-011-e5",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "mail_provider",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-011-e6",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-012",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-012-e1",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-012-e2",
+        "system": "primary_account",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-012-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-012-e4",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-012-e5",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-012-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-013",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-013-e1",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-013-e2",
+        "system": "historical_accounts",
+        "status": "present",
+        "source": "audit_service",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-013-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-013-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-013-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-013-e6",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-014",
+    "category": "still_present",
+    "records": [
+      {
+        "evidence_id": "case-014-e1",
+        "system": "analytics_events",
+        "status": "present",
+        "source": "crm_export",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-014-e2",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-014-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-014-e4",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-014-e5",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-014-e6",
+        "system": "marketing_lists",
+        "status": "present",
+        "source": "warehouse_scan",
+        "note": "rows still found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-015",
+    "category": "audit_deleted",
+    "records": [
+      {
+        "evidence_id": "case-015-e1",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-015-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-015-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-015-e4",
+        "system": "analytics_events",
+        "status": "present",
+        "source": "audit_service",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-015-e5",
+        "system": "audit_log",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-015-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-016",
+    "category": "audit_deleted",
+    "records": [
+      {
+        "evidence_id": "case-016-e1",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-016-e2",
+        "system": "audit_log",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-016-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-016-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-016-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-016-e6",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-017",
+    "category": "audit_deleted",
+    "records": [
+      {
+        "evidence_id": "case-017-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-017-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-017-e3",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-017-e4",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-017-e5",
+        "system": "audit_log",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-017-e6",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-018",
+    "category": "audit_deleted",
+    "records": [
+      {
+        "evidence_id": "case-018-e1",
+        "system": "audit_log",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-018-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-018-e3",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-018-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-018-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-018-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-019",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-019-e1",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-019-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-019-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-019-e4",
+        "system": "support_tickets",
+        "status": "unknown",
+        "source": "mail_provider",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-019-e5",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-019-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-020",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-020-e1",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-020-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-020-e3",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-020-e4",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-020-e5",
+        "system": "support_tickets",
+        "status": "unknown",
+        "source": "support_api",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-020-e6",
+        "system": "primary_account",
+        "status": "unknown",
+        "source": "crm_export",
+        "note": "source returned no answer"
+      }
+    ]
+  },
+  {
+    "case_id": "case-021",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-021-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-021-e2",
+        "system": "primary_account",
+        "status": "unknown",
+        "source": "audit_service",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-021-e3",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-021-e4",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-021-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-021-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-022",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-022-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-022-e2",
+        "system": "audit_log",
+        "status": "unknown",
+        "source": "support_api",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-022-e3",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-022-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-022-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-022-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-023",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-023-e1",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-023-e2",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-023-e3",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-023-e4",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-023-e5",
+        "system": "audit_log",
+        "status": "unknown",
+        "source": "audit_service",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-023-e6",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-024",
+    "category": "unknown_evidence",
+    "records": [
+      {
+        "evidence_id": "case-024-e1",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-024-e2",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-024-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-024-e4",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-024-e5",
+        "system": "historical_accounts",
+        "status": "unknown",
+        "source": "warehouse_scan",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-024-e6",
+        "system": "analytics_events",
+        "status": "unknown",
+        "source": "crm_export",
+        "note": "source returned no answer"
+      }
+    ]
+  },
+  {
+    "case_id": "case-025",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-025-e1",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-025-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-025-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-025-e4",
+        "system": "support_tickets",
+        "status": "ingestion_failed",
+        "source": "mail_provider",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-025-e5",
+        "system": "historical_accounts",
+        "status": "ingestion_failed",
+        "source": "audit_service",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-025-e6",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-026",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-026-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-026-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-026-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-026-e4",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-026-e5",
+        "system": "historical_accounts",
+        "status": "ingestion_failed",
+        "source": "warehouse_scan",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-026-e6",
+        "system": "analytics_events",
+        "status": "ingestion_failed",
+        "source": "mail_provider",
+        "note": "ingestion job errored before this source loaded"
+      }
+    ]
+  },
+  {
+    "case_id": "case-027",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-027-e1",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-027-e2",
+        "system": "analytics_events",
+        "status": "ingestion_failed",
+        "source": "warehouse_scan",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-027-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-027-e4",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-027-e5",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-027-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-028",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-028-e1",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-028-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "mail_provider",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-028-e3",
+        "system": "analytics_events",
+        "status": "ingestion_failed",
+        "source": "audit_service",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-028-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-028-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-028-e6",
+        "system": "primary_account",
+        "status": "ingestion_failed",
+        "source": "audit_service",
+        "note": "ingestion job errored before this source loaded"
+      }
+    ]
+  },
+  {
+    "case_id": "case-029",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-029-e1",
+        "system": "audit_log",
+        "status": "ingestion_failed",
+        "source": "mail_provider",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-029-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-029-e3",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-029-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-029-e5",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-029-e6",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-030",
+    "category": "ingestion_failed",
+    "records": [
+      {
+        "evidence_id": "case-030-e1",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-030-e2",
+        "system": "marketing_lists",
+        "status": "ingestion_failed",
+        "source": "warehouse_scan",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-030-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-030-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-030-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-030-e6",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-031",
+    "category": "missing_record",
+    "records": [
+      {
+        "evidence_id": "case-031-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-031-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "mail_provider",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-031-e3",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-031-e4",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-031-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-032",
+    "category": "missing_record",
+    "records": [
+      {
+        "evidence_id": "case-032-e1",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-032-e2",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-032-e3",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-032-e4",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      }
+    ]
+  },
+  {
+    "case_id": "case-033",
+    "category": "missing_record",
+    "records": [
+      {
+        "evidence_id": "case-033-e1",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-033-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-033-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-033-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-034",
+    "category": "missing_record",
+    "records": [
+      {
+        "evidence_id": "case-034-e1",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-034-e2",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-034-e3",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-034-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-034-e5",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      }
+    ]
+  },
+  {
+    "case_id": "case-035",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-035-e1",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-035-e2",
+        "system": "marketing_lists",
+        "status": "present",
+        "source": "support_api",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-035-e3",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-035-e4",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-035-e5",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-035-e6",
+        "system": "primary_account",
+        "status": "ingestion_failed",
+        "source": "support_api",
+        "note": "ingestion job errored before this source loaded"
+      }
+    ]
+  },
+  {
+    "case_id": "case-036",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-036-e1",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "crm_export",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-036-e2",
+        "system": "marketing_lists",
+        "status": "ingestion_failed",
+        "source": "warehouse_scan",
+        "note": "ingestion job errored before this source loaded"
+      },
+      {
+        "evidence_id": "case-036-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-036-e4",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-036-e5",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-036-e6",
+        "system": "analytics_events",
+        "status": "present",
+        "source": "warehouse_scan",
+        "note": "rows still found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-037",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-037-e1",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-037-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "support_api",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-037-e3",
+        "system": "analytics_events",
+        "status": "unknown",
+        "source": "crm_export",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-037-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-037-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-037-e6",
+        "system": "support_tickets",
+        "status": "present",
+        "source": "audit_service",
+        "note": "rows still found for subject"
+      }
+    ]
+  },
+  {
+    "case_id": "case-038",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-038-e1",
+        "system": "analytics_events",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-038-e2",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "audit_service",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-038-e3",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-038-e4",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "audit_service",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-038-e5",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-038-e6",
+        "system": "historical_accounts",
+        "status": "ingestion_failed",
+        "source": "warehouse_scan",
+        "note": "ingestion job errored before this source loaded"
+      }
+    ]
+  },
+  {
+    "case_id": "case-039",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-039-e1",
+        "system": "support_tickets",
+        "status": "unknown",
+        "source": "warehouse_scan",
+        "note": "source returned no answer"
+      },
+      {
+        "evidence_id": "case-039-e2",
+        "system": "primary_account",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-039-e3",
+        "system": "analytics_events",
+        "status": "deleted",
+        "source": "crm_export",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-039-e4",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-039-e5",
+        "system": "historical_accounts",
+        "status": "present",
+        "source": "mail_provider",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-039-e6",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      }
+    ]
+  },
+  {
+    "case_id": "case-040",
+    "category": "mixed_violation_and_unknown",
+    "records": [
+      {
+        "evidence_id": "case-040-e1",
+        "system": "primary_account",
+        "status": "present",
+        "source": "crm_export",
+        "note": "rows still found for subject"
+      },
+      {
+        "evidence_id": "case-040-e2",
+        "system": "marketing_lists",
+        "status": "deleted",
+        "source": "mail_provider",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-040-e3",
+        "system": "audit_log",
+        "status": "retained",
+        "source": "warehouse_scan",
+        "note": "audit rows intact"
+      },
+      {
+        "evidence_id": "case-040-e4",
+        "system": "historical_accounts",
+        "status": "deleted",
+        "source": "warehouse_scan",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-040-e5",
+        "system": "support_tickets",
+        "status": "deleted",
+        "source": "support_api",
+        "note": "no rows found for subject"
+      },
+      {
+        "evidence_id": "case-040-e6",
+        "system": "analytics_events",
+        "status": "ingestion_failed",
+        "source": "mail_provider",
+        "note": "ingestion job errored before this source loaded"
+      }
+    ]
+  }
+]
