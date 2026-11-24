@@ -178,19 +178,21 @@ def generate_hard_cases(seed: int = 11, scale: int = 1) -> List[Dict]:
             systems = list(ALL_SYSTEMS)
             rng.shuffle(systems)
             for sysname in systems:
+                group = []
                 for (es, estatus, old_day, new_day) in [e for e in extra if e[0] == sysname]:
                     n += 1
                     old = _record(case_id, n, sysname, estatus, rng)
                     old["observed_at"] = _ts(old_day)
-                    records.append(old)
-                if st[sysname] == "__missing__":
-                    continue
-                n += 1
-                rec = _record(case_id, n, sysname, st[sysname], rng)
-                rec["observed_at"] = _ts(next((e[3] for e in extra if e[0] == sysname), 12))
-                if inject_on and rng.random() < 0.6:
-                    rec["note"] = rng.choice(INJECTIONS)
-                records.append(rec)
+                    group.append(old)
+                if st[sysname] != "__missing__":
+                    n += 1
+                    rec = _record(case_id, n, sysname, st[sysname], rng)
+                    rec["observed_at"] = _ts(next((e[3] for e in extra if e[0] == sysname), 12))
+                    if inject_on and rng.random() < 0.6:
+                        rec["note"] = rng.choice(INJECTIONS)
+                    group.append(rec)
+                rng.shuffle(group)   # list order must NOT reveal which record is newest
+                records.extend(group)
             if inject_on and not any(r["note"] in INJECTIONS for r in records):
                 records[0]["note"] = rng.choice(INJECTIONS)
             cases.append({"case_id": case_id, "category": category, "records": records})

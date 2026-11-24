@@ -8,7 +8,7 @@ Stages
   3. run (held-out)   200 unseen cases plus 150 hard ones (different seed): the real test against overfitting
   4. score            same reward function as the gym
   5. verdict          PASS only if: no flags, runs cleanly, held-out mean >= 0.95,
-                      zero false 'complete', and public-vs-held-out gap <= 0.10
+                      every category >= 0.8, zero false 'complete', and public-vs-held-out gap <= 0.10
 """
 from __future__ import annotations
 
@@ -26,6 +26,18 @@ from gym.reward import compute_reward
 ROOT = Path(__file__).resolve().parent
 CHILD = ROOT / "benchmark" / "_child.py"
 HELD_OUT_SEED, HELD_OUT_SCALE = 99, 5
+CATEGORY_FLOOR = 0.8   # one failed category cannot hide inside a good overall mean
+
+
+def _limits() -> None:
+    """Child-process resource limits (POSIX). Not a sandbox, but stops memory and CPU abuse."""
+    try:
+        import resource
+        resource.setrlimit(resource.RLIMIT_AS, (1 << 30, 1 << 30))      # 1 GiB memory
+        resource.setrlimit(resource.RLIMIT_CPU, (20, 20))               # 20 s CPU
+        resource.setrlimit(resource.RLIMIT_FSIZE, (1 << 20, 1 << 20))   # no big files
+    except Exception:
+        pass
 
 
 def run_candidate(path: Path, cases: List[Dict], timeout: int = 30) -> Dict:
@@ -33,7 +45,8 @@ def run_candidate(path: Path, cases: List[Dict], timeout: int = 30) -> Dict:
     payload = json.dumps([{"case_id": c["case_id"], "records": c["records"]} for c in cases])
     try:
         proc = subprocess.run([sys.executable, "-I", str(CHILD), str(path)], input=payload,
-                              capture_output=True, text=True, timeout=timeout)
+                              capture_output=True, text=True, timeout=timeout,
+                              preexec_fn=_limits if hasattr(__import__('os'), 'fork') else None)
     except subprocess.TimeoutExpired:
         return {"error": f"timeout after {timeout}s"}
     if proc.returncode != 0:
@@ -49,14 +62,17 @@ def run_candidate(path: Path, cases: List[Dict], timeout: int = 30) -> Dict:
 
 def score(cases: List[Dict], decisions: List[object]) -> Dict:
     rewards, false_complete, correct = [], 0, 0
+    by_cat: Dict[str, List[float]] = {}
     for case, decision in zip(cases, decisions):
         reward, info = compute_reward(case, decision)
         rewards.append(reward)
+        by_cat.setdefault(case["category"], []).append(reward)
         false_complete += bool(info.get("false_complete"))
         correct += bool(info.get("correct"))
     n = len(rewards)
     return {"n": n, "mean_reward": sum(rewards) / n, "accuracy": correct / n,
-            "false_complete": false_complete}
+            "false_complete": false_complete,
+            "category_means": {k: sum(v) / len(v) for k, v in by_cat.items()}}
 
 
 def grade(path: Path, timeout: int = 30) -> Dict:
@@ -83,6 +99,9 @@ def grade(path: Path, timeout: int = 30) -> Dict:
             reasons.append(f"held-out mean reward {hel['mean_reward']:.2f} < 0.95")
         if hel["false_complete"] > 0:
             reasons.append(f"{hel['false_complete']} false 'complete' on held-out cases")
+        weak = {k: round(v, 2) for k, v in hel["category_means"].items() if v < CATEGORY_FLOOR}
+        if weak:
+            reasons.append(f"held-out category mean below {CATEGORY_FLOOR}: {weak}")
         if gap > 0.10:
             reasons.append(f"public-vs-held-out gap {gap:.2f} > 0.10 (overfitting)")
     report["verdict"] = "FAIL" if reasons else "PASS"

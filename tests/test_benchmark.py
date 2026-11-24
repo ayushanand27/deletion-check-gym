@@ -64,3 +64,14 @@ def test_candidate_print_cannot_corrupt_results(tmp_path):
     p = tmp_path / "chatty.py"
     p.write_text((EX / "good_solution.py").read_text() + "\nprint('hello grader')\n")
     assert grade(p)["verdict"] == "PASS"
+
+
+def test_one_failed_category_cannot_hide_in_a_good_mean(tmp_path):
+    # correct everywhere except it never restores a deleted audit log (says needs_review/complete)
+    src = (EX / "good_solution.py").read_text().replace(
+        'elif system == AUDIT and rec["status"] == "deleted":\n            violation = True',
+        'elif system == AUDIT and rec["status"] == "deleted":\n            continue\n            violation = True')
+    p = tmp_path / "blind_audit.py"
+    p.write_text(src)
+    r = grade(p)
+    assert r["verdict"] == "FAIL"

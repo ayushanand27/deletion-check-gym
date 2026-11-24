@@ -2,7 +2,7 @@
 checks an agent's decision against it. It never trusts the agent's story.
 
 Rules
-  * A required system with status 'present'       -> definite violation (delete it)
+  * A required system with status 'present' or 'retained' -> definite violation (delete it)
   * The audit log with status 'deleted'            -> definite violation (restore it)
   * A system with 'unknown' / 'ingestion_failed'
     or with NO record at all                       -> unresolved (investigate it)
@@ -56,7 +56,7 @@ def analyze(records: List[Dict], systems: Iterable[str] = ALL_SYSTEMS) -> Dict:
             elif status in UNRESOLVED:
                 unresolved.append(("investigate", system))
         else:
-            if status == "present":
+            if status in ("present", "retained"):   # 'retained' on a required system = data still held
                 violations.append(("delete", system))
             elif status in UNRESOLVED:
                 unresolved.append(("investigate", system))
@@ -107,7 +107,7 @@ def action_is_supported(action: Dict, records: List[Dict]) -> bool:
         return False   # must cite the authoritative (latest) record, not a stale one
     status = cited["status"]
     if kind == "delete":
-        return status == "present" and target in REQUIRED_DELETED
+        return status in ("present", "retained") and target in REQUIRED_DELETED
     if kind == "restore_audit":
         return status == "deleted" and target == RETAINED
     if kind == "investigate":
